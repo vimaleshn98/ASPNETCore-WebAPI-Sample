@@ -35,7 +35,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: 'SampleWebApiAspNetCore/*.csproj'
+    projects: '*.csproj'
     feedsToUse: 'select'
 - task: DotNetCoreCLI@2
   inputs:
@@ -47,4 +47,12 @@ steps:
     PathtoPublish: 'SampleWebApiAspNetCore\bin\Release\net5.0\SampleWebApiAspNetCore.dll'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dot-docker'
+    repository: 'dot-web'
+    command: 'buildAndPush'
+    Dockerfile: 'SampleWebApiAspNetCore/Dockerfile'
+    
+
 

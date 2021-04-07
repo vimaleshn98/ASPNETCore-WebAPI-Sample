@@ -44,7 +44,7 @@ steps:
     arguments: '-c Release -o out'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/out'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 

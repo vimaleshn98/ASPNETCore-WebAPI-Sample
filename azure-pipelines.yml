@@ -42,6 +42,7 @@ steps:
     command: 'publish'
     publishWebProjects: true
     arguments: '-c Release'
+    workingDirectory: 'SampleWebApiAspNetCore'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'SampleWebApiAspNetCore\bin\Release\net5.0\SampleWebApiAspNetCore.dll'

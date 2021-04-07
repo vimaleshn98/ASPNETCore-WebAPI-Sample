@@ -37,4 +37,9 @@ steps:
     command: 'restore'
     projects: 'SampleWebApiAspNetCore/*.csproj'
     feedsToUse: 'select'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '-c Release -o out'
 

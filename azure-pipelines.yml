@@ -44,7 +44,7 @@ steps:
     arguments: '-c Release -o out'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/out'
+    PathtoPublish: 'SampleWebApiAspNetCore\bin\Release\net5.0\SampleWebApiAspNetCore.dll'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
